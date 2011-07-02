@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>Strings - Dive Into Python 3</title>
+<title>Strings - Mergulhar Em Python 3</title>
 <!--[if IE]><script src=j/html5.js></script><![endif]-->
 <link rel=stylesheet href=dip3.css>
 <style>
@@ -10,7 +10,7 @@ body{counter-reset:h1 4}
 <link rel=stylesheet media=print href=print.css>
 <meta name=viewport content='initial-scale=1.0'>
 <form action=http://www.google.com/cse><div><input type=hidden name=cx value=014021643941856155761:l5eihuescdw><input type=hidden name=ie value=UTF-8>&nbsp;<input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
-<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#strings>Dive Into Python 3</a> <span class=u>&#8227;</span>
+<p>Você está aqui: <a href=index.html>Início</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#strings>Mergulhar Em Python 3</a> <span class=u>&#8227;</span>
 <p id=level>Nível de Dificuldade: <span class=u title=intermediate>&#x2666;&#x2666;&#x2666;&#x2662;&#x2662;</span>
 <h1>Strings</h1>
 <blockquote class=q>
@@ -18,18 +18,18 @@ body{counter-reset:h1 4}
 My alphabet starts where your alphabet ends! <span class=u>&#x275E;</span><br>&mdash; Dr. Seuss, On Beyond Zebra!
 </blockquote>
 <p id=toc>&nbsp;
-<h2 id=boring-stuff>Coisas Aborrecidas Que Precisa De Saber Antes De Mergulhar</h2>
+<h2 id=boring-stuff>Coisas Aborrecidas Que É Preciso Saber Antes De Poder Mergulhar</h2>
 <p class=f>Poucas pessoas pensam nisto, mas texto é incrivelmente complicado. Começando pelo alfabeto. As pessoas de <a href=http://en.wikipedia.org/wiki/Bougainville_Province>Bougainville</a> têm o alfabeto mais pequeno do mundo; o seu <a href=http://en.wikipedia.org/wiki/Rotokas_alphabet>alfabeto Rotokas</a> é composto por apenas 12 letras: A, E, G, I, K, O, P, R, S, T, U, e V. No outro lado do espectro, línguas como o Chinês, Japonês, e Coreano têm milhares de caracteres. O Inglês, claro, tem 26 letras&nbsp;&mdash;&nbsp;52 se contar maiúsculas e minúsculas separadamente&nbsp;&mdash;&nbsp;mais uma mão cheia de sinais de pontuação <i class=baa>!@#$%&amp;</i>.
 
-<p>Quando você fala de &#8220;texto,&#8221; você está provavelmente a pensar em &#8220;caracteres e símbolos no ecrã do meu computador.&#8221; Mas os computadores não trabalham em caracteres e símbolos; eles trabalham em bits e bytes. Qualquer bocado de texto que você já tenha visto no ecrã de um computador está na realidade armazenado numa certa <i>codificação de caracteres</i>. Falando informalmente, a codificação de caracteres fornece um mapeamento entre o que você vê no seu ecrã e o que o seu computador realmente armazena em memória ou em disco. Há muitas codificações de caracteres diferentes, algumas optimizadas para determinadas línguas como Russo ou Chinês ou Inglês, e outras que podem ser usadas para várias línguas.
+<p>Quando fala de &#8220;texto,&#8221; está provavelmente a pensar em &#8220;caracteres e símbolos no ecrã do meu computador.&#8221; Mas os computadores não trabalham em caracteres e símbolos; eles trabalham em bits e bytes. Qualquer bocado de texto que já se tenha visto no ecrã de um computador está na realidade armazenado numa certa <i>codificação de caracteres</i>. Falando informalmente, a codificação de caracteres fornece um mapeamento entre o que nós vemos nos nossos ecrãs e o que os nossos computadores realmente armazenam em memória ou em disco. Há muitas codificações de caracteres diferentes, algumas optimizadas para determinadas línguas como Russo ou Chinês ou Inglês, e outras que podem ser usadas para várias línguas.
 
-<p>Na realidade, é mais complicado que isso. Muitos caracteres são comuns a várias codificações, mas cada codificação pode usar uma sequência de bytes diferente para realmente armazenar esses caracteres em memória ou em disco. Pode então pensar na codificação de caracteres como uma espécie de chave de desencriptação. Quando alguém lhe dá uma sequência de bytes&nbsp;&mdash;&nbsp;um ficheiro, uma página web, qualquer coisa&nbsp;&mdash;&nbsp;e afirma que é &#8220;texto,&#8221; você precisa de saber que codificação de caracteres eles usaram para que possa descodificar os bytes para caracteres. Se lhe derem a chave errada ou nenhuma chave, você fica com a desagradável tarefa de quebrar o código. O mais provável será você errar, e o resultado ser lixo.
+<p>Na realidade, é mais complicado que isso. Muitos caracteres são comuns a várias codificações, mas cada codificação pode usar uma sequência de bytes diferente para realmente armazenar esses caracteres em memória ou em disco. Podemos então pensar na codificação de caracteres como uma espécie de chave de desencriptação. Quando alguém nos dá uma sequência de bytes&nbsp;&mdash;&nbsp;um ficheiro, uma página web, qualquer coisa&nbsp;&mdash;&nbsp;e afirma que é &#8220;texto,&#8221; nós precisamos de saber que codificação de caracteres eles usaram para que possamos descodificar os bytes para caracteres. Se nos derem a chave errada ou nenhuma chave, ficamos com a desagradável tarefa de quebrar o código. O mais provável será errarmos, e o resultado ser lixo.
 
-<aside>Tudo o que você pensava saber sobre strings está errado.</aside>
+<aside>Tudo o que pensava saber sobre strings está errado.</aside>
 
 <p>Certamente já viu páginas web como esta, com uns caracteres estranhos parecidos com pontos de interrogação onde deveriam estar apóstrofes. Isso geralmente significa que o autor da página não declarou a sua condificação de caracteres correctamente, o seu browser teve que adivinhar, e o resultado foi uma mistura de caracteres esperados e inesperados. Em Inglês é apenas incómodo; em outras línguas, o resultado pode ser completamente ilegível.
 
-<p>Há codificações de caracteres para cada língua principal no mundo. Uma vez que cada língua é diferente, e espaço em memória e em disco tem sido caro historicamente, cada codificação de caracteres é optimizada para uma língua em particular. Com isto, eu quero dizer que cada codificação usa os mesmos números (0&ndash;255) para representar os caracteres dessa língua. Por exemplo, você está provavelmente familiarizado com a codificação <abbr>ASCII</abbr>, que armazena caracteres ingleses como números que variam de 0 a 127. (65 é um &#8220;A&#8221; maiúsculo, 97 é um &#8220;a&#8221; minúsculo, etc.)  O Inglês tem um alfabeto muito simples, por isso pode ser completamente expresso em menos de 128 números. Para os que conseguem contar em base 2, isso é 7 em  8 bits num byte.
+<p>Há codificações de caracteres para cada língua principal no mundo. Uma vez que cada língua é diferente, e espaço em memória e em disco tem sido caro historicamente, cada codificação de caracteres é optimizada para uma língua em particular. Com isto, eu quero dizer que cada codificação usa os mesmos números (0&ndash;255) para representar os caracteres dessa língua. Por exemplo, provavelmente já deve estar familiarizado com a codificação <abbr>ASCII</abbr>, que armazena caracteres ingleses como números que variam de 0 a 127. (65 é um &#8220;A&#8221; maiúsculo, 97 é um &#8220;a&#8221; minúsculo, etc.)  O Inglês tem um alfabeto muito simples, por isso pode ser completamente expresso em menos de 128 números. Para os que conseguem contar em base 2, isso é 7 em  8 bits num byte.
 
 <p>As línguas da Europa Ocidental como o Francês, o Espanhol, e o Alemão têm mais letras que o Inglês. Ou, mais precisamente, eles têm letras combinadas com vários sinais diacríticos, como o caracter <code>&ntilde;</code> em Espanhol. A codificação mais comum para estas línguas é CP-1252, também chamada &#8220;windows-1252&#8221; porque foi amplamente usada em Microsoft Windows. A codificação CP-1252 partilha caracteres com <abbr>ASCII</abbr> no intervalo 0&ndash;127, mas depois prolonga-se no intervalo 128&ndash;255 para caracteres como o n-com-um-til-por-cima (241), o u-com-um-trema-por-cima (252), etc. Mas continua a ser uma codificação de um só byte; o maior número possível, 255, continua a caber num byte.
 
