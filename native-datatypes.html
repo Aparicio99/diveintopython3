@@ -10,28 +10,28 @@ body{counter-reset:h1 2}
 <link rel=stylesheet media=print href=print.css>
 <meta name=viewport content='initial-scale=1.0'>
 <form action=http://www.google.com/cse><div><input type=hidden name=cx value=014021643941856155761:l5eihuescdw><input type=hidden name=ie value=UTF-8>&nbsp;<input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=root value=Search></div></form>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#native-datatypes>Dive Into Python 3</a> <span class=u>&#8227;</span>
-<p id=level>Difficulty level: <span class=u title=beginner>&#x2666;&#x2666;&#x2662;&#x2662;&#x2662;</span>
-<h1>Native Datatypes</h1>
+<p>Está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#native-datatypes>Mergulhar em Python 3</a> <span class=u>&#8227;</span>
+<p id=level>Dificuldade: <span class=u title=beginner>&#x2666;&#x2666;&#x2662;&#x2662;&#x2662;</span>
+<h1>Tipos de Dados Nativos</h1>
 <blockquote class=q>
 <p><span class=u>&#x275D;</span> Wonder is the foundation of all philosophy, inquiry its progress, ignorance its end. <span class=u>&#x275E;</span><br>&mdash; Michel de Montaigne
 </blockquote>
 <p id=toc>&nbsp;
-<h2 id=divingin>Diving In</h2>
-<p class=f>Datatypes. Set aside <a href=your-first-python-program.html>your first Python program</a> for just a minute, and let&#8217;s talk about datatypes. In Python, <a href=your-first-python-program.html#declaringfunctions>every value has a datatype</a>, but you don&#8217;t need to declare the datatype of variables. How does that work? Based on each variable&#8217;s original assignment, Python figures out what type it is and keeps tracks of that internally.
-<p>Python has many native datatypes. Here are the important ones:
+<h2 id=divingin>Mergulhar</h2>
+<p class=f>Tipos de dados. Vamos pôr lado <a href=your-first-python-program.html>o nosso primeiro primeiro programa em Python</a> por um minuto, e falar de tipos de dados. Em Python, <a href=your-first-python-program.html#declaringfunctions>todos os valores têm um tipo de dados</a>, mas não é preciso declarar o tipo das variáveis. Como funciona isto? Baseado na atribuição original de cada variável, o Python descobre qual o seu tipo e mantém esse registo guardado internamente.
+<p>O Python têm muitos tipos de dados nativos. Aqui estão os mais importantes.
 <ol>
-<li><b>Booleans</b> are either <code>True</code> or <code>False</code>.
-<li><b>Numbers</b> can be integers (<code>1</code> and <code>2</code>), floats (<code>1.1</code> and <code>1.2</code>), fractions (<code>1/2</code> and <code>2/3</code>), or even <a href=http://en.wikipedia.org/wiki/Complex_number>complex numbers</a>.
-<li><b>Strings</b> are sequences of Unicode characters, <i>e.g.</i> an <abbr>HTML</abbr> document.
-<li><b>Bytes</b> and <b>byte arrays</b>, <i>e.g.</i> a <abbr>JPEG</abbr> image file.
-<li><b>Lists</b> are ordered sequences of values.
-<li><b>Tuples</b> are ordered, immutable sequences of values.
-<li><b>Sets</b> are unordered bags of values.
-<li><b>Dictionaries</b> are unordered bags of key-value pairs.
+<li><b>Boleanos</b> são <code>True</code> ou <code>False</code>.
+<li><b>Números</b> podem ser inteiros (<code>1</code> e <code>2</code>), flutuantes (<code>1.1</code> e <code>1.2</code>), fracções (<code>1/2</code> e <code>2/3</code>), ou até <a href=http://en.wikipedia.org/wiki/Complex_number>números complexos</a>.
+<li><b>Strings</b> são sequências de caracteres Unicode, por exemplo, um documento <abbr>HTML</abbr>.
+<li><b>Bytes</b> e <b>vectores de bytes</b>, por exemplo, um ficheiro de imagem <abbr>JPEG</abbr>.
+<li><b>Listas</b> são sequências ordenadas de valores.
+<li><b>Tuplos</b> são sequência ordenadas e imutáveis de valores.
+<li><b>Conjuntos</b> são conjuntos de valores sem ordem.
+<li><b>Dicionários</b> são conjuntos sem ordem de pares chave-valor.
 </ol>
-<p>Of course, there are more types than these. <a href=your-first-python-program.html#everythingisanobject>Everything is an object</a> in Python, so there are types like <i>module</i>, <i>function</i>, <i>class</i>, <i>method</i>, <i>file</i>, and even <i>compiled code</i>. You&#8217;ve already seen some of these: <a href=your-first-python-program.html#runningscripts>modules have names</a>, <a href=your-first-python-program.html#docstrings>functions have <code>docstrings</code></a>, <i class=baa>&amp;</i>c. You&#8217;ll learn about classes in <a href=iterators.html>Classes <i class=baa>&amp;</i> Iterators</a>, and about files in <a href=files.html>Files</a>.
-<p>Strings and bytes are important enough&nbsp;&mdash;&nbsp;and complicated enough&nbsp;&mdash;&nbsp;that they get their own chapter. Let&#8217;s look at the others first.
+<p>Claro que existem mais tipos que estes. <a href=your-first-python-program.html#everythingisanobject>Tudo é um objecto</a> em Python, portanto há tipos como <i>módulo</i>, <i>função</i>, <i>classe</i>, <i>método</i>, <i>ficheiro</i>, e até <i>código compilado</i>. Já vimos alguns destes: <a href=your-first-python-program.html#runningscripts>módulos têm nome</a>, <a href=your-first-python-program.html#docstrings>funções têm <code>docstrings</code></a>, etc. Vamos aprender sobre classes em <a href=iterators.html>Classes e Iteradores</a>, e sobre ficheiros em <a href=files.html>Ficheiros</a>.
+<p>Strings e bytes são suficientemente complicados — e complicados o suficiente — que até têm os seus próprios capítulos. Vamos olhar para os outros primeiro.
 <p class=a>&#x2042;
 
 <h2 id=booleans>Booleans</h2>
