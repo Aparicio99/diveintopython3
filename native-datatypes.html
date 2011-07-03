@@ -21,7 +21,7 @@ body{counter-reset:h1 2}
 <p class=f>Tipos de dados. Vamos pôr lado <a href=your-first-python-program.html>o nosso primeiro primeiro programa em Python</a> por um minuto, e falar de tipos de dados. Em Python, <a href=your-first-python-program.html#declaringfunctions>todos os valores têm um tipo de dados</a>, mas não é preciso declarar o tipo das variáveis. Como funciona isto? Baseado na atribuição original de cada variável, o Python descobre qual o seu tipo e mantém esse registo guardado internamente.
 <p>O Python tem muitos tipos de dados nativos. Aqui estão os mais importantes.
 <ol>
-<li><b>Boleanos</b> são <code>True</code> ou <code>False</code>. (Verdadeiro ou Falso)
+<li><b>Booleanos</b> são <code>True</code> ou <code>False</code>. (Verdadeiro ou Falso)
 <li><b>Números</b> podem ser inteiros (<code>1</code> e <code>2</code>), vírgula flutuante (<code>1.1</code> e <code>1.2</code>), fracções (<code>1/2</code> e <code>2/3</code>), ou até <a href=http://en.wikipedia.org/wiki/Complex_number>números complexos</a>.
 <li><b>Strings</b> são sequências de caracteres Unicode, por exemplo, um documento <abbr>HTML</abbr>.
 <li><b>Bytes</b> e <b>vectores de bytes</b>, por exemplo, um ficheiro de imagem <abbr>JPEG</abbr>.
@@ -34,13 +34,13 @@ body{counter-reset:h1 2}
 <p>Strings e bytes são suficientemente importantes — e complicados o suficiente — que até têm o seu próprio capítulo. Vamos olhar para os outros primeiro.
 <p class=a>&#x2042;
 
-<h2 id=booleans>Boleanos</h2>
-<aside>Pode ser usada praticamente qualquer expressão num contexto boleano</aside>
-<p>Os boleanos são verdadeiro ou falso. O Python tem duas constantes, <code><dfn>True</dfn></code> e <code><dfn>False</dfn></code>, que podem ser usadas para atribuir valores <dfn>boleanos</dfn> directamente. Expressões também pode ser avaliadas para um valor boleano. Em certos sítos (como instruções <code>if</code>), o Python espera uma expressão que avalie para um valor boleano. Estes sítios são chamados <i>contextos boleanos</i>. Pode ser usada praticamente qualquer expressão num contexto boleano, e o Python tentará determinar a sua veracidade. Diferentes tipos de dados têm diferentes regras quanto a quais valores são verdadeiro ou falso num contexto boleano. (Isto fará mais sentido depois de ver exemplos concretos mais à frente neste capítulo)
+<h2 id=booleans>Booleanos</h2>
+<aside>Pode ser usada praticamente qualquer expressão num contexto booleano</aside>
+<p>Os booleanos são verdadeiro ou falso. O Python tem duas constantes, <code><dfn>True</dfn></code> e <code><dfn>False</dfn></code>, que podem ser usadas para atribuir valores <dfn>booleanos</dfn> directamente. Expressões também pode ser avaliadas para um valor booleano. Em certos sítos (como instruções <code>if</code>), o Python espera uma expressão que avalie para um valor booleano. Estes sítios são chamados <i>contextos booleanos</i>. Pode ser usada praticamente qualquer expressão num contexto booleano, e o Python tentará determinar a sua veracidade. Diferentes tipos de dados têm diferentes regras quanto a quais valores são verdadeiro ou falso num contexto booleano. (Isto fará mais sentido depois de ver exemplos concretos mais à frente neste capítulo)
 <p>Por exemplo, tirando este fragmento de <a href=your-first-python-program.html#divingin><code>humansize.py</code></a>:
 <pre class='nd pp'><code>if size &lt; 0:
     raise ValueError('number must be non-negative')</code></pre>
-<p><var>size</var> é um inteiro, 0 é um inteiror, e <code>&lt;</code> é um operador numérico. O resultado da expressão <code>size &lt; 0</code> é sempre um boleano. Pode testar isto na shell interactiva do Python:
+<p><var>size</var> é um inteiro, 0 é um inteiror, e <code>&lt;</code> é um operador numérico. O resultado da expressão <code>size &lt; 0</code> é sempre um booleano. Pode testar isto na shell interactiva do Python:
 <pre class='nd screen'>
 <samp class=p>>>> </samp><kbd class=pp>size = 1</kbd>
 <samp class=p>>>> </samp><kbd class=pp>size &lt; 0</kbd>
@@ -51,7 +51,7 @@ body{counter-reset:h1 2}
 <samp class=p>>>> </samp><kbd class=pp>size = -1</kbd>
 <samp class=p>>>> </samp><kbd class=pp>size &lt; 0</kbd>
 <samp class=pp>True</samp></pre>
-<p>Devido a alguns problemas herdados do Python 2, os boleanos podem ser tratados como números. <code>True</code> é <code>1</code>; <code>False</code> é 0.
+<p>Devido a alguns problemas herdados do Python 2, os booleanos podem ser tratados como números. <code>True</code> é <code>1</code>; <code>False</code> é 0.
 <pre class='nd screen'>
 <samp class=p>>>> </samp><kbd class=pp>True + True</kbd>
 <samp class=pp>2</samp>
@@ -178,9 +178,9 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <li>O módulo <code>math</code> têm todas as funções trignométricas básicas, incluíndo <code>sin()</code>, <code>cos()</code>, <code>tan()</code>, e todas as variantes como <code>asin()</code>.
 <li>É de reparar, no entanto, que o Python não têm precisão infinita. <code>tan(&pi; / 4)</code> deveria retornar <code>1.0</code>, não <code>0.99999999999999989</code>.
 </ol>
-<h3 id=numbers-in-a-boolean-context>Números num contexto boleano</h3>
+<h3 id=numbers-in-a-boolean-context>Números num contexto booleano</h3>
 <aside>O valor zero é falso, e valores diferentes de zero são verdadeiros.</aside>
-<p>É possível usar números<a href=#booleans>num contexto boleano</a>, tal como na instrução <code>if</code>. O valor zero é falso, e valores diferentes de zero são verdadeiros.
+<p>É possível usar números<a href=#booleans>num contexto booleano</a>, tal como na instrução <code>if</code>. O valor zero é falso, e valores diferentes de zero são verdadeiros.
 <pre class=screen>
 <a><samp class=p>>>> </samp><kbd class=pp>def is_it_true(anything):</kbd>             <span class=u>&#x2460;</span></a>
 <samp class=p>... </samp><kbd class=pp>  if anything:</kbd>
@@ -205,9 +205,9 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <samp>no, it's false</samp></pre>
 <ol>
 <li>Sabia que é possível definir funções na shell interactiva do Python? Basta premir <kbd>ENTER</kbd> no fim de cada linha, e <kbd>ENTER</kbd> numa linha em branco para terminar.
-<li>Num contexto boleano, valores diferentes de zero são verdade, e 0 é falso.
+<li>Num contexto booleano, valores diferentes de zero são verdade, e 0 é falso.
 <li>Números de ponto flutuante diferentes de zero são verdade; <code>0.0</code> é falso. É preciso ter cuidado com isto! Se existir o menor erro de arrendamento (o que não é impossível, como foi visto na secção anterior) então o Python irá testar <code>0.0000000000001</code> em vez de 0 e irá retornar <code>True</code>.
-<li>Fracções também podem ser usadas num contexto boleano. <code>Fraction(0, n)</code> é falso para todos os valores de <var>n</var>. Todas as restantes fracções são verdadeiras.
+<li>Fracções também podem ser usadas num contexto booleano. <code>Fraction(0, n)</code> é falso para todos os valores de <var>n</var>. Todas as restantes fracções são verdadeiras.
 </ol>
 <p class=a>&#x2042;
 
