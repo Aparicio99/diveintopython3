@@ -319,7 +319,7 @@ h3:before {
 }
 #appa h1:before {
   counter-increment: h1;
-  content: 'Appendix A. '
+  content: 'Apendíce A. '
 }
 #appa h2:before {
   counter-increment: h2;
@@ -331,7 +331,7 @@ h3:before {
 }
 #appb h1:before {
   counter-increment: h1;
-  content: 'Appendix B. '
+  content: 'Apendíce B. '
 }
 #appb h2:before {
   counter-increment: h2;
@@ -343,7 +343,7 @@ h3:before {
 }
 #appc h1:before {
   counter-increment: h1;
-  content: 'Appendix C. '
+  content: 'Apendíce C. '
 }
 #appc h2:before {
   counter-increment: h2;
@@ -355,7 +355,7 @@ h3:before {
 }
 #appd h1:before {
   counter-increment: h1;
-  content: 'Appendix D. '
+  content: 'Apendíce D. '
 }
 #appd h2:before {
   counter-increment: h2;
