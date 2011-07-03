@@ -301,7 +301,7 @@ h1 {
   counter-reset: h2;
 }
 h1:before {
-  content: "Chapter " counter(h1) ". ";
+  content: "Capítulo " counter(h1) ". ";
 }
 h2:before {
   counter-increment: h2;
