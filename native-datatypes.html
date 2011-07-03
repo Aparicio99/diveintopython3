@@ -84,10 +84,10 @@ ZeroDivisionError: int division or modulo by zero</samp></pre>
 <li>Pode ser usado a função <code>type()</code> para verificar o tipo de qualquer valor ou variável. Como é de esperar, <code>1</code> é um <code>int</code>.
 <li>Da mesma forma, pode ser usado a função <code>isinstance()</code> para verificar se um valor ou variável é de um determinado tipo.
 <li>Adicionar um <code>int</code> a um <code>int</code> resulta num <code>int</code>.
-<li>Adicionar um <code>int</code> a um <code>float</code> resulta num <code>float</code>. O Python transforma o <code>int</code> num <code>float</code> para efectuar a adição, retornando um <code>float</code> como resultado.
+<li>Adicionar um <code>int</code> a um <code>float</code> resulta num <code>float</code>. O Python converte o <code>int</code> num <code>float</code> para efectuar a adição, retornando um <code>float</code> como resultado.
 </ol>
-<h3 id=number-coercion>Coercing Integers To Floats And Vice-Versa</h3>
-<p>As you just saw, some operators (like addition) will coerce integers to floating point numbers as needed. You can also coerce them by yourself.
+<h3 id=number-coercion>Transformar Inteiros para Ponto Flutuante e Vice-Versa</h3>
+<p>Como foi visto, alguns operadores (como a adição) convertem inteiros para ponto flutuante conforme necessário. Também é possível fazer essa conversão explícitamente.
 <pre class=screen>
 <a><samp class=p>>>> </samp><kbd class=pp>float(2)</kbd>                <span class=u>&#x2460;</span></a>
 <samp class=pp>2.0</samp>
@@ -102,15 +102,15 @@ ZeroDivisionError: int division or modulo by zero</samp></pre>
 <a><samp class=p>>>> </samp><kbd class=pp>type(1000000000000000)</kbd>  <span class=u>&#x2465;</span></a>
 <samp class=pp>&lt;class 'int'></samp></pre>
 <ol>
-<li>You can explicitly coerce an <code>int</code> to a <code>float</code> by calling the <code>float()</code> function.
-<li>Unsurprisingly, you can also coerce a <code>float</code> to an <code>int</code> by calling <code>int()</code>.
-<li>The <code>int()</code> function will truncate, not round.
-<li>The <code>int()</code> function truncates negative numbers towards 0. It&#8217;s a true truncate function, not a floor function.
-<li>Floating point numbers are accurate to 15 decimal places.
-<li>Integers can be arbitrarily large.
+<li>É possível converter explícitamente um <code>int</code> para um <code>float</code> chamando a função <code>float()</code>.
+<li>Da mesma forma, é possível converter um <code>float</code> para um <code>int</code> chamando a função <code>int()</code>.
+<li>A função <code>int()</code> irá truncar, não arredondar.
+<li>A função <code>int()</code> trunca números negativos em direcção a 0. É uma verdadeira função para truncar, não arredondar por defeito.
+<li>Os números de ponto flutuante são precisos até 15 casas decimais.
+<li>Os inteiros podem ser arbitrariamente longos.
 </ol>
 <blockquote class='note compare python2'>
-<p><span class=u>&#x261E;</span>Python 2 had separate types for <code>int</code> and <code>long</code>. The <code>int</code> datatype was limited by <code>sys.maxint</code>, which varied by platform but was usually <code>2<sup>32</sup>-1</code>. Python 3 has just one integer type, which behaves mostly like the old <code>long</code> type from Python 2. See <a href=http://www.python.org/dev/peps/pep-0237><abbr>PEP</abbr> 237</a> for details.
+<p><span class=u>&#x261E;</span>O Python 2 tinha diferentes tipos para <code>int</code> e <code>long</code>. O tipo <code>int</code> estava limitado até <code>sys.maxint</code>, que variava entre plataformas, mas normalmente era <code>2<sup>32</sup>-1</code>. O Python 3 têm apenas um tipo inteiro, que se comporta como o antigo tipo <code>long</code> do Python 2. Ver <a href=http://www.python.org/dev/peps/pep-0237><abbr>PEP</abbr> 237</a> para detalhes.
 </blockquote>
 <h3 id=common-numerical-operations>Common Numerical Operations</h3>
 <p>You can do all kinds of things with numbers.
