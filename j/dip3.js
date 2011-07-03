@@ -88,10 +88,10 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 */
 
-var HS = {'visible': 'hide', 'hidden': 'show'};
+var HS = {'visible': 'esconder', 'hidden': 'mostrar'};
 
 function hideTOC() {
-    var toc = '<span class="nm u">&#8227;</span> <a href="javascript:showTOC()">show table of contents</a>';
+    var toc = '<span class="nm u">&#8227;</span> <a href="javascript:showTOC()">mostrar índice de conteúdos</a>';
     $("#toc").html(toc);
 }
 
@@ -113,7 +113,7 @@ function showTOC() {
 	toc += '</ol>';
 	level -= 1;
     }
-    toc = '<span class="nm u">&#9662;</span> <a href="javascript:hideTOC()">hide table of contents</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Full table of contents</a></li>' + toc.substring(4);
+    toc = '<span class="nm u">&#9662;</span> <a href="javascript:hideTOC()">esconder índice de conteúdos</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Índice de conteúdos completo</a></li>' + toc.substring(4);
     $("#toc").html(toc);
 }
 
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 		/* wrap code block in a div and insert widget block */
 		$(this).wrapInner('<div class=b></div>');
-		var widgetHTML = '<div class=w>[<a class=toggle href="javascript:toggleCodeBlock(\'' + this.id + '\')">' + HS.visible + '</a>] [<a href="javascript:plainTextOnClick(\'' + this.id + '\')">open in new window</a>]';
+		var widgetHTML = '<div class=w>[<a class=toggle href="javascript:toggleCodeBlock(\'' + this.id + '\')">' + HS.visible + '</a>] [<a href="javascript:plainTextOnClick(\'' + this.id + '\')">abrir numa nova janela</a>]';
 		if ($(this).hasClass('cmdline')) {
 		    widgetHTML += ' [<a href="troubleshooting.html#getting-to-the-command-line">command line help</a>]';
 		}
