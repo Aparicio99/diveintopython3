@@ -139,8 +139,8 @@ ZeroDivisionError: int division or modulo by zero</samp></pre>
 <blockquote class='note compare python2'>
 <p><span class=u>&#x261E;</span>No Python 2, o operador <code>/</code> normalmente significava divisão inteira, mas era possível comportar-se como divisão de ponto flutuante incluíndo uma directiva especial no código. No Python 3, o operador <code>/</code> significa sempre divisão de ponto flutuante. Ver <a href=http://www.python.org/dev/peps/pep-0238/><abbr>PEP</abbr> 238</a> para detalhes.
 </blockquote>
-<h3 id=fractions>Fractions</h3>
-<p>Python isn&#8217;t limited to integers and floating point numbers. It can also do all the fancy math you learned in high school and promptly forgot about.
+<h3 id=fractions>Fracções</h3>
+<p>O Python não está limitado a números inteiros e ponto flutuante. Também pode fazer todo o género de coisas que se aprende na escola para depois esquecer.
 <pre class=screen>
 <a><samp class=p>>>> </samp><kbd class=pp>import fractions</kbd>              <span class=u>&#x2460;</span></a>
 <a><samp class=p>>>> </samp><kbd class=pp>x = fractions.Fraction(1, 3)</kbd>  <span class=u>&#x2461;</span></a>
@@ -157,11 +157,11 @@ ZeroDivisionError: int division or modulo by zero</samp></pre>
     raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
 ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <ol>
-<li>To start using fractions, import the <code>fractions</code> module.
-<li>To define a fraction, create a <code>Fraction</code> object and pass in the numerator and denominator.
-<li>You can perform all the usual mathematical operations with fractions. Operations return a new <code>Fraction</code> object. <code>2 * (1/3) = (2/3)</code>
-<li>The <code>Fraction</code> object will automatically reduce fractions. <code>(6/4) = (3/2)</code>
-<li>Python has the good sense not to create a fraction with a zero denominator.
+<li>Para usar fracções, importar o módulo <code>fractions</code>.
+<li>Para definir fracções, criar um objecto <code>Fraction</code> e passar o numerador e demoninador.
+<li>É possível efectuar todas as operações matemáticas usuais com fracções. As operações retornam um novo objecto <code>Fraction</code>. <code>2 * (1/3) = (2/3)</code>
+<li>O objecto <code>Fraction</code> reduz as fracções automáticamente. <code>(6/4) = (3/2)</code>
+<li>O Python têm o bom senso de não criar uma fracção com o denominador zero.
 </ol>
 <h3 id=trig>Trigonometry</h3>
 <p>You can also do basic trigonometry in Python.
