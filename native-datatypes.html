@@ -211,16 +211,16 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 </ol>
 <p class=a>&#x2042;
 
-<h2 id=lists>Lists</h2>
-<p>Lists are Python&#8217;s workhorse datatype. When I say &#8220;<dfn>list</dfn>,&#8221; you might be thinking &#8220;array whose size I have to declare in advance, that can only contain items of the same type, <i class=baa>&amp;</i>c.&#8221; Don&#8217;t think that. Lists are much cooler than that.
+<h2 id=lists>Listas</h2>
+<p>As listas em Python são o cavalo para todo o trabalho. Quando se fala em "<dfn>lista</dfn>", poderá levar a pensar em "vector cujo tamanho é preciso declarar com antecedência, que só pode conter elementos do mesmo tipo, etc". Não pense assim. As listas são muito mais fixes que isso.
 <blockquote class='note compare perl5'>
-<p><span class=u>&#x261E;</span>A list in Python is like an array in Perl 5. In Perl 5, variables that store arrays always start with the <code>@</code> character; in Python, variables can be named anything, and Python keeps track of the datatype internally.
+<p><span class=u>&#x261E;</span>Uma lista em Python é como um array em Perl 5. Em Perl 5, as variáves que guardam vectores começam sempre com o caracter <code>@</code>; em Python, as variáveis podem ter qualquer nome, e o Python mantém o registo do tipo de dados internamente.
 </blockquote>
 <blockquote class='note compare java'>
-<p><span class=u>&#x261E;</span>A list in Python is much more than an array in Java (although it can be used as one if that&#8217;s really all you want out of life). A better analogy would be to the <code>ArrayList</code> class, which can hold arbitrary objects and can expand dynamically as new items are added.
+<p><span class=u>&#x261E;</span>Uma lista em Python é muito mais que um array em Java (embora possa ser usado como tal se isso for realmente tudo o que se quiser da vida). Uma melhor analogia seria para a classe <code>ArrayList</code>, que pode conter objectos arbitrários e expandir-se dinamicamente conforme sejam adicionados novos items.
 </blockquote>
-<h3 id=creatinglists>Creating A List</h3>
-<p>Creating a list is easy: use square brackets to wrap a comma-separated list of values.
+<h3 id=creatinglists>Criar uma lista</h3>
+<p>Criar uma lista é fácil; usa-se parênteses rectos para envolver uma lista de valores separados por vírgula.
 <pre class=screen>
 <a><samp class=p>>>> </samp><kbd class=pp>a_list = ['a', 'b', 'mpilgrim', 'z', 'example']</kbd>  <span class=u>&#x2460;</span></a>
 <samp class=p>>>> </samp><kbd class=pp>a_list</kbd>
@@ -234,15 +234,15 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <a><samp class=p>>>> </samp><kbd class=pp>a_list[-3]</kbd>                                       <span class=u>&#x2464;</span></a>
 <samp class=pp>'mpilgrim'</samp></pre>
 <ol>
-<li>First, you define a list of five items. Note that they retain their original order. This is not an accident. A list is an ordered set of items.
-<li>A list can be used like a zero-based array. The first item of any non-empty list is always <code>a_list[0]</code>.
-<li>The last item of this five-item list is <code>a_list[4]</code>, because lists are always zero-based.
-<li>A negative index accesses items from the end of the list counting backwards. The last item of any non-empty list is always <code>a_list[-1]</code>.
-<li>If the negative index is confusing to you, think of it this way: <code>a_list[-<var>n</var>] == a_list[len(a_list) - <var>n</var>]</code>. So in this list, <code>a_list[-3] == a_list[5 - 3] == a_list[2]</code>.
+<li>Primeiro, define-se uma lista de cinco items. Notar que é mantido a ordem original. Isto não é acidental. Uma lista é um conjunto ordenado de items.
+<li>Uma lista pode ser usada como um vector com início em zero. O primeiro elemento não vazio de uma lista é sempre <code>a_list[0]</code>
+<li>O último item desta lista é <code>a_list[4]</code>, devido às listas terem sempre início em zero.
+<li>Um índice negativo acede aos items desde o fim da lista contando para trás. O último item de uma lista não vazia é sempre <code>a_list[-1]</code>.
+<li>Se os índices negativos for confusos, basta pensar desta forma: <code>a_list[-<var>n</var>] == a_list[len(a_list) - <var>n</var>]</code>. Portanto nesta lista, <code>a_list[-3] == a_list[5 - 3] == a_list[2]</code>.
 </ol>
-<h3 id=slicinglists>Slicing A List</h3>
-<aside>a_list[0] is the first item of a_list.</aside>
-<p>Once you&#8217;ve defined a list, you can get any part of it as a new list. This is called <i>slicing</i> the list.
+<h3 id=slicinglists>Cortar Listas</h3>
+<aside>a_list[0] é o primeiro item de a_list.</aside>
+<p>Depois de ter definido uma lista, é possível obter qualquer parte como uma nova lista. Isto é chamado <i>cortar</i> a lista.
 <pre class=screen>
 <samp class=p>>>> </samp><kbd class=pp>a_list</kbd>
 <samp class=pp>['a', 'b', 'mpilgrim', 'z', 'example']</samp>
@@ -259,12 +259,12 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <a><samp class=p>>>> </samp><kbd class=pp>a_list[:]</kbd>              <span class=u>&#x2465;</span></a>
 <samp class=pp>['a', 'b', 'mpilgrim', 'z', 'example']</samp></pre>
 <ol>
-<li>You can get a part of a list, called a &#8220;slice&#8221;, by specifying two indices. The return value is a new list containing all the items of the list, in order, starting with the first slice index (in this case <code>a_list[1]</code>), up to but not including the second slice index (in this case <code>a_list[3]</code>).
-<li>Slicing works if one or both of the slice indices is negative. If it helps, you can think of it this way: reading the list from left to right, the first slice index specifies the first item you want, and the second slice index specifies the first item you don&#8217;t want. The return value is everything in between.
-<li>Lists are zero-based, so <code>a_list[0:3]</code> returns the first three items of the list, starting at <code>a_list[0]</code>, up to but not including <code>a_list[3]</code>.
-<li>If the left slice index is 0, you can leave it out, and 0 is implied. So <code>a_list[:3]</code> is the same as <code>a_list[0:3]</code>, because the starting 0 is implied.
-<li>Similarly, if the right slice index is the length of the list, you can leave it out. So <code>a_list[3:]</code> is the same as <code>a_list[3:5]</code>, because this list has five items.  There is a pleasing symmetry here. In this five-item list, <code>a_list[:3]</code> returns the first 3 items, and <code>a_list[3:]</code> returns the last two items. In fact, <code>a_list[:<var>n</var>]</code> will always return the first <var>n</var> items, and <code>a_list[<var>n</var>:]</code> will return the rest, regardless of the length of the list.
-<li>If both slice indices are left out, all items of the list are included. But this is not the same as the original <var>a_list</var> variable. It is a new list that happens to have all the same items. <code>a_list[:]</code> is shorthand for making a complete copy of a list.
+<li>É possível obter uma parte de uma lista, chamada uma fatia; espeficificando dois índices. O valor de retorno é uma nova lista que contém todos os elementos da lista, ordenados, começando pelo primeiro índice da fatia (neste caso <code>a_lista[1]</code>, até mas não incluíndo o segundo índice da fatia (nesta caso <code>a_list[3]</code>).
+<li>Cortar também funciona se um ou ambos os índices da fatia forem negativos. Se ajudar, pode-se pensar desta forma: lendo a lista da esquerda para a direita, o primeiro índice da fatia indica o primeiro item que se quer, e o segundo índice da fatia indica o primeiro item que não se quer. O valor de retorno é tudo o que estiver no meio.
+<li>As listas têm início em zero, portanto <code>a_list[0:3]</code> retorna os primeiros três elementos da lista, começando em <code>a_list[0]</code>, até mas não incluíndo <code>a_list[3]</code>.
+<li>Se o índice esquerdo da fatia for 0, pode ser deixado de fora, e o 0 fica implícito. Portanto <code>a_list[:3]</code> é o mesmo que <code>a_list[0:3]</code>, porque o início em 0 está implícito.
+<li>Da mesma forma, se o índice direito da fatia for o comprimento da lista, pode ser deixado de fora. Portanto <code>a_list[3:]</code> é o mesmo que <code>a_list[3:5]</code>, porque a lista têm cinco items. Existe uma agradável simetria aqui. Nesta lista de cinco items, <code>a_list[:3]</code> retorna os primeiros 3 items, e <code>a_list[3:]</code> retorna os últimos dois items. De facto, <code>a_list[:<var>n</var>]</code> irá sempre retornar os primeiros <var>n</var> items, e <code>a_list[<var>n</var>:]</code> irá sempre retornar o resto, qualquer que seja o comprimento da lista.
+<li>Se ambos os índices da fatia não forem indicados, todos os items da lista estão incluídos. Mas isto não é o mesmo que a variável original <var>a_list</var>. É uma nova lista que por acaso têm todos os mesmos items. <code>a_list[:]</code> é um atalho para criar uma cópia completa de uma lista.
 </ol>
 <h3 id=extendinglists>Adding Items To A List</h3>
 <p>There are four ways to add items to a list.
