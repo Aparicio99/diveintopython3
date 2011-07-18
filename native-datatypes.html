@@ -266,8 +266,8 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <li>Da mesma forma, se o índice direito da fatia for o comprimento da lista, pode ser deixado de fora. Portanto <code>a_list[3:]</code> é o mesmo que <code>a_list[3:5]</code>, porque a lista têm cinco items. Existe uma agradável simetria aqui. Nesta lista de cinco items, <code>a_list[:3]</code> retorna os primeiros 3 items, e <code>a_list[3:]</code> retorna os últimos dois items. De facto, <code>a_list[:<var>n</var>]</code> irá sempre retornar os primeiros <var>n</var> items, e <code>a_list[<var>n</var>:]</code> irá sempre retornar o resto, qualquer que seja o comprimento da lista.
 <li>Se ambos os índices da fatia não forem indicados, todos os items da lista estão incluídos. Mas isto não é o mesmo que a variável original <var>a_list</var>. É uma nova lista que por acaso têm todos os mesmos items. <code>a_list[:]</code> é um atalho para criar uma cópia completa de uma lista.
 </ol>
-<h3 id=extendinglists>Adding Items To A List</h3>
-<p>There are four ways to add items to a list.
+<h3 id=extendinglists>Adicionar items a uma Lista</h3>
+<p>Existem quatro formas de adicionar items a uma lista.
 <pre class=screen>
 <samp class=p>>>> </samp><kbd class=pp>a_list = ['a']</kbd>
 <a><samp class=p>>>> </samp><kbd class=pp>a_list = a_list + [2.0, 3]</kbd>    <span class=u>&#x2460;</span></a>
@@ -283,18 +283,19 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <samp class=p>>>> </samp><kbd class=pp>a_list</kbd>
 <samp class=pp>['&Omega;', 'a', 2.0, 3, True, 'four', '&Omega;']</samp></pre>
 <ol>
-<li>The <code>+</code> operator concatenates lists to create a new list. A list can contain any number of items; there is no size limit (other than available memory). However, if memory is a concern, you should be aware that list concatenation creates a second list in memory. In this case, that new list is immediately assigned to the existing variable <var>a_list</var>. So this line of code is really a two-step process&nbsp;&mdash;&nbsp;concatenation then assignment&nbsp;&mdash;&nbsp;which can (temporarily) consume a lot of memory when you&#8217;re dealing with large lists.
-<li>A list can contain items of any datatype, and the items in a single list don&#8217;t all need to be the same type. Here we have a list containing a string, a floating point number, and an integer.
-<li>The <code>append()</code> method adds a single item to the end of the list. (Now we have <em>four</em> different datatypes in the list!)
-<li>Lists are implemented as classes.  &#8220;Creating&#8221; a list is really instantiating a class.  As such, a list has methods that operate on it. The <code>extend()</code> method takes one argument, a list, and appends each of the items of the argument to the original list.
-<li>The <code>insert()</code> method inserts a single item into a list. The first argument is the index of the first item in the list that will get bumped out of position. List items do not need to be unique; for example, there are now two separate items with the value <code>'&Omega;'</code>: the first item, <code>a_list[0]</code>, and the last item, <code>a_list[6]</code>.
+<li>O operador <code>+</code> concatena listas para criar uma nova lista. Uma lista pode conter qualquer número de items; não há limite de tamanho (além da memória disponível). No entanto, se a memória for uma preocupação, é preciso reparar que a concatenação de listas cria uma segunda lista em memória. Neste caso, essa nova lista é imediatamente atribuída à variável existente <var>a_list</var>. Portanto esta linha de código é na realidade um processo de duas etapas &mdash; concatenação e depois atribuição &mdash; que pode (temporáriamente) consumir muita memória se estiver a lidar com listas grandes. 
+<li>Uma lista pode conter items de qualquer tipo de dados, e os items de uma lista não precisam de ser todos do mesmo tipo. Aqui têm-se uma lista contendo uma string, um número de vírgula flutuante, e um inteiro.
+<li>O método <code>append()</code> adiciona um único item ao fim da lista. (Agora têm-se <em>quatro</em> tipos de dados diferentes na lista!)
+<li>As listas são implementadas como classes.  &#8220;Criar&#8221; uma lista é na realidade instanciar uma classe. E portanto, uma lista têm métodos para nela operar. O método <code>extend()</code> recebe um argumento, uma lista, e acrescenta cada um dos items do argumento à lista original.
+<li>O método <code>insert()</code> insere um único item numa lista. O primeiro argumento é o índice do primeiro item na lista que irá mudar de posição. Os items de uma lista não precisam de ser únicos; por exemplo, existem agora dois diferentes items com o valor <code>'&Omega;'</code>: o primeiro item, <code>a_list[0]</code>, e o último item, <code>a_list[6]</code>.
 </ol>
 
 <blockquote class='note compare perl'>
-<p><span class=u>&#x261E;</span><code><var>a_list</var>.insert(0, <var>value</var>)</code> is like the <code>unshift()</code> function in Perl. It adds an item to the beginning of the list, and all the other items have their positional index bumped up to make room.
+<p><span class=u>&#x261E;</span><code><var>a_list</var>.insert(0, <var>value</var>)</code> é como a função <code>unshift()</code> no Perl. Adiciona um item ao início da lista, e todos os restantes items ficam o seu índice incrementado para poder criar espaço.
 </blockquote>
 
 <p>Let&#8217;s look closer at the difference between <code>append()</code> and <code>extend()</code>.
+<p>Aqui vê-se em maior detalhe a diferença entre  <code>append()</code> e <code>extend()</code>.
 
 <pre class=screen>
 <samp class=p>>>> </samp><kbd class=pp>a_list = ['a', 'b', 'c']</kbd>
@@ -313,10 +314,10 @@ ZeroDivisionError: Fraction(0, 0)</samp></pre>
 <samp class=p>>>> </samp><kbd class=pp>a_list[-1]</kbd>
 <samp class=pp>['g', 'h', 'i']</samp></pre>
 <ol>
-<li>The <code>extend()</code> method takes a single argument, which is always a list, and adds each of the items of that list to <var>a_list</var>.
-<li>If you start with a list of three items and extend it with a list of another three items, you end up with a list of six items.
-<li>On the other hand, the <code>append()</code> method takes a single argument, which can be any datatype. Here, you&#8217;re calling the <code>append()</code> method with a list of three items.
-<li>If you start with a list of six items and append a list onto it, you end up with... a list of seven items. Why seven? Because the last item (which you just appended) <em>is itself a list</em>. Lists can contain any type of data, including other lists. That may be what you want, or it may not. But it&#8217;s what you asked for, and it&#8217;s what you got.
+<li>O método <code>extend()</code> recebe um único argumento que é sempre uma lista, e adiciona cada um dos items dessa lista a <var>a_list</var>.
+<li>Se uma lista tiver três items e for extendida com outra lista de três items, fica-se com uma lista com seis items.
+<li>Por outro lado, o método <code>append()</code> recebe um único argumento, que pode ser qualquer tipo de dados. Aqui, está a chamar-se o método <code>append()</code> com uma lista de três elementos.
+<li>Se uma lista tiver seis items e lhe for acresentada outra lista, acaba-se com... uma lista com sete items. Porquê sete? Porque o ultimo item (que foi mesmo agora acrescentado) <em>é ele próprio uma lista</em>. As listas podem conter qualquer tipo de dados, incluíndo outras listas. Isso pode ser o que se quer, ou talvez não. mas é o que se pediu, e foi o que se recebeu.
 </ol>
 <h3 id=searchinglists>Searching For Values In A List</h3>
 <pre class=screen>
